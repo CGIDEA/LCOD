@@ -79,7 +79,7 @@ for na in range(name.shape[0]):
             if kk==0:
                 NHOD=lcod[0,ind[:,kk]]
             else:
-                NHOD=LDCD+lcod[0,ind[:,kk]]
+                NHOD=NHOD+lcod[0,ind[:,kk]]
         NHOD=np.array(NHOD).reshape(len(data1),1)
         AUC=roc_auc_score(lable,NHOD)
         y_pred = pyod.utils.utility.get_label_n(lable,NHOD, T)
